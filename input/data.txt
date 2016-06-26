@@ -1,0 +1,41 @@
+ 
+Creating 3 tables with 2 column families in each table
+Table - I: TravelerSummaryCreditCard
+Row Key Format: (source_key + credit_card_id)
+CF1: TravelerSummaryBase
+CF2: CreditCardInfo
+Table - II: TravelerSummaryContact
+Row Key Format: (source_key + contact_id)
+CF1: TravelerSummaryBase
+CF2: ContactInfo
+Table - III: TravelerSummaryPassport
+Row Key Format: (source_key + passport_no)
+CF1: TravelerSummaryBase
+CF2: PassportInfo
+ 
+Creating 4 tables with 1 column family in each table
+Table - I: TravelerSummaryBase
+Row Key Format: (source_key)
+CF: BaseInfo
+Table - II: TravelerSummaryCreditCard
+Row Key Format: (source_key + credit_card_id)
+CF: CreditCardInfo
+Table - III: TravelerSummaryContact
+Row Key Format: (source_key + contact_id)
+CF: ContactInfo
+Table - IV: TravelerSummaryPassport
+Row Key Format: (source_key + passport_no)
+CF: PassportInfo
+ 
+Creating 1 table with 4 column families
+Table - I: TravelerSummary
+Row Key Format: (source_key + info_type_ind + info_type_unique_id)
+info_type_ind will imply which type of information a row is containing (CC / CN / PP)
+info_type_unique_id is nothing but the value unique id used in earlier tables.
+CF1: BaseInfo
+CF2: CreditCardInfo
+CF3: ContactInfo
+CF: PassportInfo
+ 
+NOTE: credit_card_id, contact_id and passport_no are unique values which are coming as part of data.
+ 
